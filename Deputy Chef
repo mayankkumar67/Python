@@ -1,0 +1,28 @@
+# cook your code here
+t=int(raw_input())
+for l in range(0,t):
+    n=int(raw_input())
+    a=[]
+    b=[]
+    a=map(int,raw_input().split(' '))
+    d=map(int,raw_input().split(' '))
+    best=-1
+    for i in range(0,n):
+        if(i==0):
+            if((a[n-1]>d[i]) or (a[2]>d[i]) or ((a[2]+a[n-1])>d[i])):
+                continue
+            else:
+              count=d[i]
+        elif(i==(n-1)):
+            if((a[n-2]>d[i]) or (a[0]>d[i]) or ((a[0]+a[n-2])>d[i])):
+                continue
+            else:
+              count=d[i]
+        else:
+            if((a[i-1]>d[i]) or (a[i+1]>d[i]) or ((a[i+1]+a[n-1])>d[i])):
+                continue
+            else:
+              count=d[i]
+        if count>best:
+          best=count          
+        print count
