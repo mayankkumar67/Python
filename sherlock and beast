@@ -22,13 +22,7 @@ def decentNumber(n):
         a=""
         print -1
     else:
-        news=""
-        for i in range(0,n):
-            if(i<num1):
-                news+='5'
-            else:
-                news+='3'
-        print news
+        print '5'*num1+'3'*num2
 if __name__ == '__main__':
     t = int(raw_input().strip())
 
