@@ -1,0 +1,38 @@
+#!/bin/python
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the decentNumber function below.
+def decentNumber(n):
+    num=int(math.floor(n/3))
+    num1=num*3
+    num2=n-num1
+    loop=1
+    while(loop==1 and num1!=0):
+        if(num1%3==0 and num2%5==0):
+            break
+        else:
+            num1-=3
+            num2+=3
+    if(num1<0 or num2%5!=0):
+        a=""
+        print -1
+    else:
+        news=""
+        for i in range(0,n):
+            if(i<num1):
+                news+='5'
+            else:
+                news+='3'
+        print news
+if __name__ == '__main__':
+    t = int(raw_input().strip())
+
+    for t_itr in xrange(t):
+        n = int(raw_input().strip())
+
+        decentNumber(n)
